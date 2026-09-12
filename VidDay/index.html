@@ -1,0 +1,326 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Watch Video</title>
+    <meta name="description" content="Watch video online">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            background: #0b0b0b;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* =========================
+           BANNER 320x50
+        ========================== */
+
+        .banner {
+            width: 320px;
+            height: 50px;
+            margin: 10px auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #151515;
+            border-radius: 6px;
+        }
+
+        /* =========================
+           VIDEO
+        ========================== */
+
+        .video-box {
+            width: 100%;
+            background: #000000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        video {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            background: #000000;
+        }
+
+        /* =========================
+           NATIVE BANNER
+        ========================== */
+
+        .native {
+            width: 100%;
+            margin: 20px 0;
+            padding: 14px;
+            background: #171717;
+            border: 1px solid #292929;
+            border-radius: 12px;
+        }
+
+        .native-label {
+            margin-bottom: 10px;
+            color: #777777;
+            font-size: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .native-content {
+            width: 100%;
+            min-height: 100px;
+            text-align: center;
+        }
+
+        /* =========================
+           HISTATS
+           TERSEMBUNYI
+        ========================== */
+
+        .histats-hidden {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            overflow: hidden !important;
+            visibility: hidden !important;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 20px 0;
+            color: #555555;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 10px;
+            }
+
+            .video-box {
+                border-radius: 8px;
+            }
+
+            .native {
+                margin-top: 15px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- =====================================================
+         BANNER 320x50
+    ====================================================== -->
+
+    <div class="banner">
+
+        <script>
+            atOptions = {
+                'key' : '25d71dd44720319f1f81a0d1a91b838d',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+            };
+        </script>
+
+        <script src="https://gasptournament.com/25d71dd44720319f1f81a0d1a91b838d/invoke.js"></script>
+
+    </div>
+
+
+    <!-- =====================================================
+         VIDEO
+         AUTOPLAY + MUTED + LOOP + PLAYSLINE
+    ====================================================== -->
+
+    <div class="video-box">
+
+        <video
+            id="myVideo"
+            autoplay
+            muted
+            loop
+            playsinline
+            controls
+            preload="auto">
+
+            <source
+                src="https://cdn.videy.co/upgUFgZG1.mp4"
+                type="video/mp4">
+
+            Browser Anda tidak mendukung video HTML5.
+
+        </video>
+
+    </div>
+
+
+    <!-- =====================================================
+         NATIVE BANNER
+    ====================================================== -->
+
+    <div class="native">
+
+        <div class="native-label">
+            Advertisement
+        </div>
+
+        <div class="native-content">
+
+            <script
+                async="async"
+                data-cfasync="false"
+                src="https://gasptournament.com/901dd8336d77d3fccf8d91372fc1254b/invoke.js">
+            </script>
+
+            <div id="container-901dd8336d77d3fccf8d91372fc1254b"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         HISTATS
+         TERSEMBUNYI DARI PENGUNJUNG
+    ====================================================== -->
+
+    <div class="histats-hidden">
+
+        <div id="histats_counter"></div>
+
+        <script type="text/javascript">
+
+            var _Hasync = _Hasync || [];
+
+            _Hasync.push([
+                'Histats.start',
+                '1,5044824,4,9,110,60,00011111'
+            ]);
+
+            _Hasync.push([
+                'Histats.fasi',
+                '1'
+            ]);
+
+            _Hasync.push([
+                'Histats.track_hits',
+                ''
+            ]);
+
+            (function() {
+
+                var hs = document.createElement('script');
+
+                hs.type = 'text/javascript';
+                hs.async = true;
+                hs.src = '//s10.histats.com/js15_as.js';
+
+                (
+                    document.getElementsByTagName('head')[0]
+                    ||
+                    document.getElementsByTagName('body')[0]
+                ).appendChild(hs);
+
+            })();
+
+        </script>
+
+        <noscript>
+
+            <img
+                src="//sstatic1.histats.com/0.gif?5044824&101"
+                alt=""
+                width="1"
+                height="1">
+
+        </noscript>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+        © 2026
+    </footer>
+
+</div>
+
+
+<!-- =====================================================
+     VIDEO AUTOPLAY
+====================================================== -->
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const video = document.getElementById("myVideo");
+
+        video.muted = true;
+
+        function startVideo() {
+
+            video.play().catch(function () {
+
+                console.log(
+                    "Autoplay diblokir oleh browser."
+                );
+
+            });
+
+        }
+
+        startVideo();
+
+    });
+
+</script>
+
+</body>
+</html>
+```
