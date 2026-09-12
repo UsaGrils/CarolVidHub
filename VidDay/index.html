@@ -9,31 +9,36 @@
     <meta name="description" content="Watch video online">
 
     <style>
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
         body {
             background: #0b0b0b;
-            color: #ffffff;
+            color: #fff;
             font-family: Arial, Helvetica, sans-serif;
         }
 
         .container {
             width: 100%;
             max-width: 900px;
-            margin: auto;
+            margin: 0 auto;
             padding: 15px;
         }
 
-        /* =========================================
+        /* ==========================================
            BANNER 320x50
-        ========================================= */
+        ========================================== */
 
-        .banner {
+        .banner-area {
             width: 320px;
             height: 50px;
             margin: 10px auto 20px;
@@ -41,62 +46,70 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: #151515;
-            border-radius: 6px;
         }
 
-        /* =========================================
+        #banner-ads {
+            width: 320px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ==========================================
            VIDEO
-        ========================================= */
+        ========================================== */
 
         .video-box {
             width: 100%;
             background: #000;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
         }
 
-        video {
+        #myVideo {
             display: block;
             width: 100%;
             height: auto;
             background: #000;
         }
 
-        /* =========================================
-           NATIVE BANNER
-        ========================================= */
+        /* ==========================================
+           NATIVE ADS
+        ========================================== */
 
-        .native {
+        .native-box {
             width: 100%;
             margin: 20px 0;
-            padding: 14px;
+            padding: 15px;
             background: #171717;
             border: 1px solid #292929;
             border-radius: 12px;
         }
 
         .native-label {
-            margin-bottom: 10px;
             color: #777;
             font-size: 10px;
             text-align: center;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 10px;
         }
 
-        .native-content {
+        #native-ads {
             width: 100%;
-            min-height: 100px;
+            min-height: 120px;
             text-align: center;
+            overflow: visible;
         }
 
-        /* =========================================
-           HISTATS TERSEMBUNYI
-        ========================================= */
+        /* ==========================================
+           HISTATS
+           TERSEMBUNYI
+        ========================================== */
 
-        .histats-hidden {
+        #histats-area {
             display: none !important;
             width: 0 !important;
             height: 0 !important;
@@ -104,20 +117,20 @@
             visibility: hidden !important;
         }
 
-        /* =========================================
+        /* ==========================================
            FOOTER
-        ========================================= */
+        ========================================== */
 
         footer {
-            padding: 20px;
+            text-align: center;
             color: #555;
             font-size: 11px;
-            text-align: center;
+            padding: 20px 0;
         }
 
-        /* =========================================
+        /* ==========================================
            MOBILE
-        ========================================= */
+        ========================================== */
 
         @media (max-width: 600px) {
 
@@ -129,15 +142,11 @@
                 border-radius: 8px;
             }
 
-            .native {
-                margin-top: 15px;
+            .native-box {
                 padding: 10px;
             }
-
         }
-
     </style>
-
 </head>
 
 
@@ -146,53 +155,40 @@
 <div class="container">
 
 
-    <!-- =====================================================
-         =====================================================
+    <!-- ==================================================
+         ==================================================
          BANNER 320x50
 
          ===== GANTI DI SINI =====
 
-         Kalau ingin mengganti banner, hapus script di bawah
-         dan tempel script banner baru Anda di sini.
+         Kalau ingin mengganti banner,
+         ubah bagian script banner di bawah.
+         ==================================================
+         ================================================== -->
 
-         =====================================================
-         ===================================================== -->
-
-    <div class="banner">
-
-        <script>
-            atOptions = {
-                'key' : '25d71dd44720319f1f81a0d1a91b838d',
-                'format' : 'iframe',
-                'height' : 50,
-                'width' : 320,
-                'params' : {}
-            };
-        </script>
-
-        <script src="https://gasptournament.com/25d71dd44720319f1f81a0d1a91b838d/invoke.js"></script>
-
+    <div class="banner-area">
+        <div id="banner-ads"></div>
     </div>
 
 
-    <!-- =====================================================
-         =====================================================
+    <!-- ==================================================
+         ==================================================
          VIDEO
 
          ===== GANTI LINK VIDEO DI SINI =====
 
-         Cukup ganti URL di bagian src="..."
-
-         =====================================================
-         ===================================================== -->
+         Cukup ganti URL pada src di bawah.
+         ==================================================
+         ================================================== -->
 
     <div class="video-box">
 
         <video
             id="myVideo"
-            controls
+            autoplay
             muted
             playsinline
+            controls
             preload="metadata">
 
             <source
@@ -206,131 +202,192 @@
     </div>
 
 
-    <!-- =====================================================
-         =====================================================
+    <!-- ==================================================
+         ==================================================
          NATIVE BANNER
 
          ===== GANTI SCRIPT NATIVE DI SINI =====
 
-         =====================================================
-         ===================================================== -->
+         Container sengaja dibuat lebih dahulu.
+         ==================================================
+         ================================================== -->
 
-    <div class="native">
+    <div class="native-box">
 
         <div class="native-label">
             Advertisement
         </div>
 
-        <div class="native-content">
+        <div id="native-ads">
 
-            <script
-                async="async"
-                data-cfasync="false"
-                src="https://gasptournament.com/901dd8336d77d3fccf8d91372fc1254b/invoke.js">
-            </script>
-
-            <div id="container-901dd8336d77d3fccf8d91372fc1254b"></div>
+            <div id="container-901dd8336d77d3fccf8d91372fc1254b">
+            </div>
 
         </div>
 
     </div>
 
 
-    <!-- =====================================================
-         =====================================================
+    <!-- ==================================================
+         ==================================================
          HISTATS
 
          ===== GANTI SCRIPT HISTATS DI SINI =====
 
-         Histats disembunyikan dari tampilan pengunjung.
+         Histats disembunyikan dari pengunjung.
+         ==================================================
+         ================================================== -->
 
-         =====================================================
-         ===================================================== -->
-
-    <div class="histats-hidden">
+    <div id="histats-area">
 
         <div id="histats_counter"></div>
 
-        <script type="text/javascript">
-
-            var _Hasync = _Hasync || [];
-
-            _Hasync.push([
-                'Histats.start',
-                '1,5044824,4,9,110,60,00011111'
-            ]);
-
-            _Hasync.push([
-                'Histats.fasi',
-                '1'
-            ]);
-
-            _Hasync.push([
-                'Histats.track_hits',
-                ''
-            ]);
-
-            (function() {
-
-                var hs = document.createElement('script');
-
-                hs.type = 'text/javascript';
-                hs.async = true;
-
-                hs.src = '//s10.histats.com/js15_as.js';
-
-                (
-                    document.getElementsByTagName('head')[0]
-                    ||
-                    document.getElementsByTagName('body')[0]
-                ).appendChild(hs);
-
-            })();
-
-        </script>
-
-        <noscript>
-
-            <img
-                src="//sstatic1.histats.com/0.gif?5044824&101"
-                alt=""
-                width="1"
-                height="1">
-
-        </noscript>
-
     </div>
 
-
-    <!-- FOOTER -->
 
     <footer>
         © 2026
     </footer>
 
-
 </div>
 
 
-<!-- =====================================================
-     VIDEO AUTOPLAY
-===================================================== -->
-
 <script>
+/* ======================================================
+   LOAD IKLAN SETELAH HALAMAN SIAP
+====================================================== */
 
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-        const video = document.getElementById("myVideo");
 
-        video.muted = true;
+    /* ==================================================
+       BANNER 320x50
+       
+       ===== GANTI DI SINI =====
+    ================================================== */
 
-        video.play().catch(function () {
+    try {
 
-            console.log("Autoplay diblokir oleh browser.");
+        window.atOptions = {
+            'key': '25d71dd44720319f1f81a0d1a91b838d',
+            'format': 'iframe',
+            'height': 50,
+            'width': 320,
+            'params': {}
+        };
 
-        });
+        var bannerScript = document.createElement("script");
+
+        bannerScript.src =
+            "https://gasptournament.com/25d71dd44720319f1f81a0d1a91b838d/invoke.js";
+
+        bannerScript.async = true;
+
+        document
+            .getElementById("banner-ads")
+            .appendChild(bannerScript);
+
+    } catch (error) {
+
+        console.log("Banner gagal dimuat:", error);
+
+    }
+
+
+    /* ==================================================
+       NATIVE BANNER
+       
+       Container sudah dibuat sebelum script dipanggil.
+       
+       ===== GANTI DI SINI =====
+    ================================================== */
+
+    try {
+
+        var nativeScript = document.createElement("script");
+
+        nativeScript.async = true;
+        nativeScript.setAttribute("data-cfasync", "false");
+
+        nativeScript.src =
+            "https://gasptournament.com/901dd8336d77d3fccf8d91372fc1254b/invoke.js";
+
+        document
+            .getElementById("native-ads")
+            .appendChild(nativeScript);
+
+    } catch (error) {
+
+        console.log("Native banner gagal dimuat:", error);
+
+    }
+
+
+    /* ==================================================
+       HISTATS
+       
+       ===== GANTI SCRIPT HISTATS DI SINI =====
+    ================================================== */
+
+    try {
+
+        var _Hasync = _Hasync || [];
+
+        _Hasync.push([
+            'Histats.start',
+            '1,5044824,4,9,110,60,00011111'
+        ]);
+
+        _Hasync.push([
+            'Histats.fasi',
+            '1'
+        ]);
+
+        _Hasync.push([
+            'Histats.track_hits',
+            ''
+        ]);
+
+        var histatsScript = document.createElement("script");
+
+        histatsScript.type = "text/javascript";
+        histatsScript.async = true;
+
+        histatsScript.src =
+            "//s10.histats.com/js15_as.js";
+
+        document
+            .getElementsByTagName("head")[0]
+            .appendChild(histatsScript);
+
+    } catch (error) {
+
+        console.log("Histats gagal dimuat:", error);
+
+    }
+
+});
+
+
+/* ======================================================
+   VIDEO AUTOPLAY
+====================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    var video = document.getElementById("myVideo");
+
+    video.muted = true;
+
+    video.play().catch(function () {
+
+        console.log(
+            "Autoplay diblokir browser. Klik tombol Play."
+        );
 
     });
+
+});
 
 </script>
 
