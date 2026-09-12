@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +9,11 @@
     <meta name="description" content="Watch video online">
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        html,
-        body {
-            width: 100%;
-            min-height: 100%;
         }
 
         body {
@@ -30,13 +25,13 @@
         .container {
             width: 100%;
             max-width: 900px;
-            margin: 0 auto;
+            margin: auto;
             padding: 15px;
         }
 
-        /* =========================
+        /* =========================================
            BANNER 320x50
-        ========================== */
+        ========================================= */
 
         .banner {
             width: 320px;
@@ -50,29 +45,28 @@
             border-radius: 6px;
         }
 
-        /* =========================
+        /* =========================================
            VIDEO
-        ========================== */
+        ========================================= */
 
         .video-box {
             width: 100%;
-            background: #000000;
+            background: #000;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
         }
 
         video {
             display: block;
             width: 100%;
             height: auto;
-            max-height: 85vh;
-            background: #000000;
+            background: #000;
         }
 
-        /* =========================
+        /* =========================================
            NATIVE BANNER
-        ========================== */
+        ========================================= */
 
         .native {
             width: 100%;
@@ -85,7 +79,7 @@
 
         .native-label {
             margin-bottom: 10px;
-            color: #777777;
+            color: #777;
             font-size: 10px;
             text-align: center;
             text-transform: uppercase;
@@ -98,10 +92,9 @@
             text-align: center;
         }
 
-        /* =========================
-           HISTATS
-           TERSEMBUNYI
-        ========================== */
+        /* =========================================
+           HISTATS TERSEMBUNYI
+        ========================================= */
 
         .histats-hidden {
             display: none !important;
@@ -111,20 +104,20 @@
             visibility: hidden !important;
         }
 
-        /* =========================
+        /* =========================================
            FOOTER
-        ========================== */
+        ========================================= */
 
         footer {
-            padding: 20px 0;
-            color: #555555;
+            padding: 20px;
+            color: #555;
             font-size: 11px;
             text-align: center;
         }
 
-        /* =========================
+        /* =========================================
            MOBILE
-        ========================== */
+        ========================================= */
 
         @media (max-width: 600px) {
 
@@ -140,17 +133,30 @@
                 margin-top: 15px;
                 padding: 10px;
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
 <div class="container">
 
+
     <!-- =====================================================
+         =====================================================
          BANNER 320x50
-    ====================================================== -->
+
+         ===== GANTI DI SINI =====
+
+         Kalau ingin mengganti banner, hapus script di bawah
+         dan tempel script banner baru Anda di sini.
+
+         =====================================================
+         ===================================================== -->
 
     <div class="banner">
 
@@ -170,20 +176,24 @@
 
 
     <!-- =====================================================
+         =====================================================
          VIDEO
-         AUTOPLAY + MUTED + LOOP + PLAYSLINE
-    ====================================================== -->
+
+         ===== GANTI LINK VIDEO DI SINI =====
+
+         Cukup ganti URL di bagian src="..."
+
+         =====================================================
+         ===================================================== -->
 
     <div class="video-box">
 
         <video
             id="myVideo"
-            autoplay
-            muted
-            loop
-            playsinline
             controls
-            preload="auto">
+            muted
+            playsinline
+            preload="metadata">
 
             <source
                 src="https://cdn.videy.co/upgUFgZG1.mp4"
@@ -197,8 +207,13 @@
 
 
     <!-- =====================================================
+         =====================================================
          NATIVE BANNER
-    ====================================================== -->
+
+         ===== GANTI SCRIPT NATIVE DI SINI =====
+
+         =====================================================
+         ===================================================== -->
 
     <div class="native">
 
@@ -222,9 +237,15 @@
 
 
     <!-- =====================================================
+         =====================================================
          HISTATS
-         TERSEMBUNYI DARI PENGUNJUNG
-    ====================================================== -->
+
+         ===== GANTI SCRIPT HISTATS DI SINI =====
+
+         Histats disembunyikan dari tampilan pengunjung.
+
+         =====================================================
+         ===================================================== -->
 
     <div class="histats-hidden">
 
@@ -255,6 +276,7 @@
 
                 hs.type = 'text/javascript';
                 hs.async = true;
+
                 hs.src = '//s10.histats.com/js15_as.js';
 
                 (
@@ -280,20 +302,19 @@
     </div>
 
 
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+    <!-- FOOTER -->
 
     <footer>
         © 2026
     </footer>
+
 
 </div>
 
 
 <!-- =====================================================
      VIDEO AUTOPLAY
-====================================================== -->
+===================================================== -->
 
 <script>
 
@@ -303,24 +324,16 @@
 
         video.muted = true;
 
-        function startVideo() {
+        video.play().catch(function () {
 
-            video.play().catch(function () {
+            console.log("Autoplay diblokir oleh browser.");
 
-                console.log(
-                    "Autoplay diblokir oleh browser."
-                );
-
-            });
-
-        }
-
-        startVideo();
+        });
 
     });
 
 </script>
 
+
 </body>
 </html>
-```
